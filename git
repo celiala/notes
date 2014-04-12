@@ -1,7 +1,17 @@
-git add -i
+git diff --staged # change in "staged" area
+git diff HEAD # changes to tracked files; both staged/unstaged; diff betw working dir and last commit
+========================================================
+# SPLITTING a commit
+git rebase 
+edit (commit you want to split)
+git reset HEAD~
+========================================================
+# remove a file from every commit
+git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+========================================================
+git stash branch testchanges
 ========================================================
 git lg iTests ^master
-git lg master..iTests
 ========================================================
 git rebase master my_test   # replay my_test(topic) onto the base(master)
 git co master; git merge my_test    #fast-fwd of base branch(master)
@@ -25,6 +35,16 @@ git diff --stat 9c77fd5   #commit summary
 git reset HEAD~     #split apart most recent commit
 git reset HEAD^     # RESET COMMIT: undoes the commit and leaves modifies files unstaged:
 ========================================================
+git co master
+git merge hotfix
+git rebase --interactive HEAD~3    # REBASE
+git cherry-pick <shortSHA> -n      # pull other check-in, but don't commit
+git config --global alias.last 'git -1 HEAD'    #git aliases
+git checkout -b foo_bar                         #checkout + switch to branch
+-------------
+git add -i
+git lg master..iTests
+----------------------------------------------------
 git add -p <filename>  # ADD ONLY (P)ARTS OF A FILE
     y - (y)es, stage hunk
     n - (n)o, don't stage hunk
@@ -32,10 +52,3 @@ git add -p <filename>  # ADD ONLY (P)ARTS OF A FILE
     e - manually edit hunk
     j - (j)ump to next hunk (going back to this later)
     d - go to next file
-========================================================
-git co master
-git merge hotfix
-git rebase --interactive HEAD~3    # REBASE
-git cherry-pick <shortSHA> -n      # pull other check-in, but don't commit
-git config --global alias.last 'git -1 HEAD'    #git aliases
-git checkout -b foo_bar                         #checkout + switch to branch
