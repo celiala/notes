@@ -1,3 +1,8 @@
+git add -i
+========================================================
+git lg iTests ^master
+git lg master..iTests
+========================================================
 git rebase master my_test   # replay my_test(topic) onto the base(master)
 git co master; git merge my_test    #fast-fwd of base branch(master)
 ========================================================
