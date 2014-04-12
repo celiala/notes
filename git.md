@@ -1,4 +1,4 @@
-git reset --hard origin/master
+> git reset --hard origin/master
 - - - 
 **sync up master to origin/master**
 ``
