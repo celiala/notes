@@ -1,12 +1,10 @@
 > git reset --hard origin/master
 - - - 
 **sync up master to origin/master**
-``
-git branch master
-git checkout master
-git fetch origin
-git reset --hard origin/master
-``
+> git branch master
+> git checkout master
+> git fetch origin
+> git reset --hard origin/master
 - - - 
 git diff --stat 9c77fd5   #commit summary
 - - -
