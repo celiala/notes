@@ -1,13 +1,13 @@
 git reset --hard origin/master
-----
+- - - 
 # sync up master to origin/master
 git branch master
 git checkout master
 git fetch origin
 git reset --hard origin/master
-=============================================
+
 git diff --stat 9c77fd5   #commit summary
-=============================================
+
 #SPLITTING A COMMIT
 
 # REBASE!
@@ -27,7 +27,7 @@ d - go to next file
  
 # pull other check-in, but don't commit 
 git cherry-pick <shortSHA> -n
-=============================================
+
 git reset HEAD~                                 #split apart most recent commit
 git config --global alias.last 'git -1 HEAD'    #git aliases
 git checkout -b foo_bar                         #checkout + switch to branch
