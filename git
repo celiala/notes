@@ -1,3 +1,10 @@
+git rebase master my_test   # replay my_test(topic) onto the base(master)
+git co master; git merge my_test    #fast-fwd of base branch(master)
+========================================================
+git co my_test
+git rebase master       # replay my_test on top of master
+#can now do a fast-forward merge of master
+========================================================
 git reset --hard origin/master
 - - - 
 **sync up master to origin/master**
